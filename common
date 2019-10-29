@@ -24,3 +24,22 @@ Connection closed by foreign host.
 
 查看访问经过的路由与时间
 traceroute -r baidu.com
+
+
+ssh是linux的标准配置并且最常用，可以用来判断端口吗？
+用法: ssh -v -p port username@ip
+-v 调试模式(会打印日志).
+-p 指定端口
+username可以随意
+1）连接不存在端口
+[root@localhost ~]# ssh 10.0.250.3 -p 80
+ssh: connect to host 10.0.250.3 port 80: Connection refused
+
+[root@localhost ~]# ssh 10.0.250.3 -p 80 -v
+OpenSSH_5.3p1, OpenSSL 1.0.1e-fips 11 Feb 2013
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: Applying options for *
+debug1: Connecting to 10.0.250.3 [10.0.250.3] port 80.
+debug1: connect to address 10.0.250.3 port 80: Connection refused
+ssh: connect to host 10.0.250.3 port 80: Connection refused
+不用-v选项也可以咯
