@@ -1,0 +1,26 @@
+查看磁盘目录使用大小
+du -sh * 
+
+清理日志文件
+cat /dev/null > file_name
+
+标准unix/linux下的grep通过下面參数控制上下文
+grep xxx /home/admin/20190920.log
+grep -C 20 xxxx /home/admin/20190920.log
+grep -C 5 foo file 显示file文件里匹配foo字串那行以及上下5行
+grep -B 5 foo file 显示foo及前5行
+grep -A 5 foo file 显示foo及后5行
+
+telnet是windows标准服务，可以直接用；如果是linux机器，需要安装telnet.
+用法: telnet ip port
+[root@localhost ~]# telnet localhost 22
+Trying ::1...
+Connected to localhost. #看到Connected就连接成功了
+Escape character is '^]'.
+SSH-2.0-OpenSSH_5.3
+a
+Protocol mismatch.
+Connection closed by foreign host.
+
+查看访问经过的路由与时间
+traceroute -r baidu.com
